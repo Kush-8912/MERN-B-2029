@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-// app.use(express.json())
+app.use(express.json())
 
 const courses = [
   { id: 1, courseName: "Java", instructor: "Anisha", ratings: 4.7 },
@@ -39,11 +39,19 @@ app.post("/topics/courses" , (req , res)=>{
 app.put('/topics/courses/:id' , (req , res)=>{
     let course = courses.find((course) => course.id === parseInt(req.params.id));
 
+    course.courseName = req.body.courseName
+    course.ratings = req.body.ratings
+
     res.send(course)
 })
 
 
-, delete
+// , delete
+
+app.delete('/topics/courses/:id' , (req , res)=>{
+    let course = courses.find((course) => course.id === parseInt(req.params.id));
+    // Delete the course
+})
 
 app.listen(8002, () => {
   console.log("Server Started at port 8002");
