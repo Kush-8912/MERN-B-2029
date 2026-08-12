@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+// app.use(express.json())
+
 const courses = [
   { id: 1, courseName: "Java", instructor: "Anisha", ratings: 4.7 },
   { id: 2, courseName: "JavaScript", instructor: "Shounak", ratings: 4.8 },
@@ -25,7 +27,23 @@ app.get("/topics/courses/:id", (req, res) => {
   res.send(course);
 });
 
-//Create , update , delete
+//Create - post 
+
+
+app.post("/topics/courses" , (req , res)=>{
+   courses.push(req.body)
+   res.send('Course Created')
+})
+
+// update 
+app.put('/topics/courses/:id' , (req , res)=>{
+    let course = courses.find((course) => course.id === parseInt(req.params.id));
+
+    res.send(course)
+})
+
+
+, delete
 
 app.listen(8002, () => {
   console.log("Server Started at port 8002");
