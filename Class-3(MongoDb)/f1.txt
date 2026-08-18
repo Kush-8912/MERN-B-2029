@@ -1,3 +1,5 @@
 mrinalbhattacharya_db_user
 
 hOptSy87PqHkFLH7
+
+mongodb+srv://mrinalbhattacharya_db_user:hOptSy87PqHkFLH7@cluster0.anop7ki.mongodb.net/LMS?appName=Cluster0
