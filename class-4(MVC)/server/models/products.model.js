@@ -15,10 +15,12 @@ const productSchema = new mongoose.Schema({
         type: Number
     },
 
-    isIsStock: {
+    isInStock: {
         type: Boolean,
         required: true
     }
-})
+} , {timestamps:true})
 
 const ProductModel = mongoose.model('Product', productSchema)
+
+module.exports = ProductModel
